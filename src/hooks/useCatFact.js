@@ -5,9 +5,9 @@ export function useCatFact()  {
     const [fact, setFact] = useState();
     
     const refreshFact = () => {
-      getRandomFact().then(setFact);
+      getRandomFact().then(setFact); //llamamos a la función del fetch que está en services.
     }
-    useEffect(refreshFact, []); //Llamamos a la función del fetch
+    useEffect(refreshFact, []); 
   return { fact, refreshFact } //Retorno el fact y también la función que me permite actualizar el fact
   }
   

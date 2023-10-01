@@ -4,7 +4,7 @@ import "./App.css";
 import { useCatImage } from "./hooks/useCatImage";
 import { useCatFact } from "./hooks/useCatFact";
 //const CAT_ENDPOINT_IMG_URL = `https://cataas.com/cat/says/${firstWord}?size=50&color=red&json=true`
-const CAT_PREFIX_IMG_URL = "https://cataas.com/";
+
 //Revisar las APIS y buscar los endpoints que necesitamos antes de hacer el fetch
 
 
@@ -30,7 +30,7 @@ function App() {
       {imageUrl && (
         <img
           style={{ maxWidth: "320px" }}
-          src={`${CAT_PREFIX_IMG_URL}${imageUrl}`}
+          src={ imageUrl }
           alt={`Image extracted using the three words for ${fact}`}
         />
       )}

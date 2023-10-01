@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-
+const CAT_PREFIX_IMG_URL = "https://cataas.com/";
 //custom hook
 //le pasamos el fact como objeto para que sea más extensible, es una buena práctica
 //por si en el futuro queremos agregar más parámetros.
@@ -23,6 +23,8 @@ export function useCatImage({ fact }) {
           setImageUrl(url);
         });
     }, [fact]);
-    return { imageUrl };
+    return { imageUrl: `${CAT_PREFIX_IMG_URL}${imageUrl}` };
   }
-  //Devuelve un objeto con el string de la url de la imagen
+  //Devuelve un objeto con el string de la url de la imagen + el prefijo
+  //Esta lógica puedo reutilizarla en otros componentes, 
+  //Al pasarla a un custom hook la quitamos de la lógica interna del componente App
